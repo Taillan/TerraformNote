@@ -1,6 +1,8 @@
+# Terraform Guide
+
 ## Variable
 
-*variale.tf*
+### variale.tf
 
 ```js
 variable "filename" {
@@ -9,7 +11,7 @@ variable "filename" {
 }
 ```
 
-*interractiv way*
+### interractiv way
 
 ```js
 variable "filename" {
@@ -22,8 +24,28 @@ var.filename
   Enter a value: "/root/pets.xt
 ```
 
-*command line*
+### command line
 
 ```bash
-terraform appl -var "filename=/root/pets.txt
+terraform appl -var "filename=/root/pets.txt"
+```
+
+### ENV VAR
+
+```bash
+export TF_VAR_filename="/root/pets.txt"
+```
+
+### tfvars
+
+terraform.tfvars
+
+```bash
+filename = "/root/pets.txt"
+```
+
+if file is named different must use ``-var-file``:
+
+```bash
+terraform apply -var-file variables.tfvars
 ```
