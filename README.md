@@ -2,21 +2,22 @@
 
 *variale.tf*
 
-```json
+```js
 variable "filename" {
     default = "root/pets.txt"
     type = string
 }
 ```
+
 *interractiv way*
 
-```json
+```js
 variable "filename" {
 }
 ```
 
 ```bash
-terraform appl 
+terraform apply
 var.filename 
   Enter a value: "/root/pets.xt
 ```
