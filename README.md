@@ -60,7 +60,9 @@ terraform fmt       # Format in canonical form
 terraform providers mirror 
 ```
 
-## Life Cycle
+## Meta Arguments
+
+### Life Cycle
 
 ```terraform
 lifecycle {
@@ -78,4 +80,33 @@ lifecycle {
 lifecycle {
    ignore_changes = [tags]
  }
+```
+
+### Depend on
+
+```terraform
+depends_on = [
+  random_pet.my-pet
+]
+```
+
+### Count
+
+Will create 3 ressources in a list
+
+```terraform
+variable "filename" {
+  default = [
+    "/root/pets.txt"
+    "/root/dogs.txt"
+    "/root/cats.txt"
+    "/root/cows.txt"
+    "/root/ducks.txt"
+  ]
+}
+
+resource "local_file" "pet" {
+  filename = var.filename[count.index]
+  count = length(var.filename)
+}
 ```
