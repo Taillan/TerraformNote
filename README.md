@@ -100,13 +100,31 @@ variable "filename" {
     "/root/pets.txt"
     "/root/dogs.txt"
     "/root/cats.txt"
-    "/root/cows.txt"
-    "/root/ducks.txt"
   ]
 }
 
 resource "local_file" "pet" {
   filename = var.filename[count.index]
   count = length(var.filename)
+}
+```
+
+### For each
+
+Create object as a map not a list, allow to update only ressource modify and not change all the list
+
+```terraform
+variable "filename" {
+  type= list(string)  # or set(string)
+  default = [
+    "/root/pets.txt"
+    "/root/dogs.txt"
+    "/root/cats.txt"
+  ]
+}
+
+resource "local_file" "pet" {
+  filename = each.value
+  for_each = toset(var.filename) # toset usefull only if its a list not a set
 }
 ```
