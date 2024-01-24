@@ -4,7 +4,7 @@
 
 ### variale.tf
 
-```js
+```terraform
 variable "filename" {
     default = "root/pets.txt"
     type = string
@@ -13,7 +13,7 @@ variable "filename" {
 
 ### interractiv way
 
-```js
+```terraform
 variable "filename" {
 }
 ```
@@ -30,7 +30,7 @@ var.filename
 terraform appl -var "filename=/root/pets.txt"
 ```
 
-### ENV VAR
+### env var
 
 ```bash
 export TF_VAR_filename="/root/pets.txt"
@@ -48,4 +48,34 @@ if file is named different must use ``-var-file``:
 
 ```bash
 terraform apply -var-file variables.tfvars
+```
+
+## Terraform Command
+
+```bash
+terraform graph
+terraform refresh   # Refresh tf state from Real World
+terraform validate  # Linter
+terraform fmt       # Format in canonical form
+terraform providers mirror 
+```
+
+## Life Cycle
+
+```terraform
+lifecycle {
+   prevent_destroy = true
+ }
+```
+
+```terraform
+lifecycle {
+   create_before_destroy = true
+ }
+```
+
+```terraform
+lifecycle {
+   ignore_changes = [tags]
+ }
 ```
