@@ -54,10 +54,19 @@ terraform apply -var-file variables.tfvars
 
 ```bash
 terraform graph
-terraform refresh   # Refresh tf state from Real World
-terraform validate  # Linter
-terraform fmt       # Format in canonical form
+terraform refresh    # Refresh tf state from Real World
+terraform validate   # Linter
+terraform fmt        # Format in canonical form
 terraform providers mirror 
+terraform apply -replace="ressource_name" # Signal the ressource KO and replace it
+terraform output     # Show output
+terraform providers  #
+terrafrom state list # List all ressource recorded in ressource state file
+terraform state show < ressourceType.ressourceName >
+terraform state mv  < ressourceType.ressourceName > # Move the ressource but keep the link with the real world ressource
+terraform state pull # pull the state file localy
+terraform state push # Erase the remote state file
+terraform state rm < ressourceType.ressourceName > # If you dont want anymore manage a ressource
 ```
 
 ## Meta Arguments
@@ -126,5 +135,23 @@ variable "filename" {
 resource "local_file" "pet" {
   filename = each.value
   for_each = toset(var.filename) # toset usefull only if its a list not a set
+}
+```
+
+## Log and Debug
+
+
+```bash
+export TF_LOG= < LOG_LEVEL | TRACE | DEBUG | INFO | WARN | ERROR | JSON > 
+export TF_LOG_PATH= "/root/pets.txt"
+```
+
+## Provisioner
+
+```terraform
+
+provisioner "local-exec" {
+  on_failure = fail # | continue
+  when = destroy
 }
 ```
