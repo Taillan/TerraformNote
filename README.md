@@ -63,10 +63,34 @@ terraform output     # Show output
 terraform providers  #
 terrafrom state list # List all ressource recorded in ressource state file
 terraform state show < ressourceType.ressourceName >
-terraform state mv  < ressourceType.ressourceName > # Move the ressource but keep the link with the real world ressource
+terraform state mv  < ressourceType.ressourceName > # Rename | Move the ressource but keep the link with the real world ressource 
 terraform state pull # pull the state file localy
 terraform state push # Erase the remote state file
 terraform state rm < ressourceType.ressourceName > # If you dont want anymore manage a ressource
+terraform import <ressource_type>.<ressource_name> <attribute> # Import a not managed ressource to manage it
+
+terraform console # To test terraform command
+  file("path/to/a/file")
+  length(var.region)
+  index(var.ami, "AMI-ABC")
+  element(var.ami,2)
+  contains(var.ami, "AMI-XYZ")
+  toset(var.region)
+  max(-1,2,-10,200) # 200
+  min(-1,2,-10,200) # -10
+  ceil(10.1)  # 11
+  floor(10.1) # 10
+  split(",", "ami-xyz,AMI-ABC,ami-efg")     # ["ami-xyz","AMI-ABC","ami-efg"]
+  join(",",["ami-xyz","AMI-ABC","ami-efg"]) # "ami-xyz,AMI-ABC,ami-efg"
+  lower(var.ami)
+  upper(var.ami)
+  title(var.ami)
+  substr(var.ami,0,7)
+  key(var.map)   #list key
+  value(var.map) # list value
+  lookup(var.map, "key1") #output the value
+  lookup(var.map, "key_unknow", "default value") #output the default value if key not present
+  
 ```
 
 ## Meta Arguments
