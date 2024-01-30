@@ -1,0 +1,66 @@
+2024/01/30 09:23:51 [INFO] Packer version: 1.10.0 [go1.20.11 linux amd64]
+2024/01/30 09:23:51 [TRACE] discovering plugins in /usr/bin
+2024/01/30 09:23:51 [TRACE] discovering plugins in .
+2024/01/30 09:23:51 [TRACE] discovering plugins in /home/bertrandt/.config/packer/plugins
+2024/01/30 09:23:51 [INFO] Discovered potential plugin: proxmox = /home/bertrandt/.config/packer/plugins/github.com/hashicorp/proxmox/packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64
+2024/01/30 09:23:51 [INFO] Discovered potential plugin: virtualbox = /home/bertrandt/.config/packer/plugins/github.com/hashicorp/virtualbox/packer-plugin-virtualbox_v1.0.5_x5.0_linux_amd64
+2024/01/30 09:23:52 [INFO] found external [-packer-default-plugin-name- clone iso] builders from proxmox plugin
+2024/01/30 09:23:52 [INFO] found external [iso ovf vm] builders from virtualbox plugin
+2024/01/30 09:23:52 [INFO] PACKER_CONFIG env var not set; checking the default config file path
+2024/01/30 09:23:52 [INFO] PACKER_CONFIG env var set; attempting to open config file: /home/bertrandt/.packerconfig
+2024/01/30 09:23:52 [WARN] Config file doesn't exist: /home/bertrandt/.packerconfig
+2024/01/30 09:23:52 [INFO] Setting cache directory: /home/bertrandt/.cache/packer
+2024/01/30 09:23:52 [TRACE] listing potential installations for "github.com/hashicorp/proxmox" that match "~> 1". plugingetter.ListInstallationsOptions{FromFolders:[]string{"/usr/bin", ".", "/home/bertrandt/.config/packer/plugins"}, BinaryInstallationOptions:plugingetter.BinaryInstallationOptions{APIVersionMajor:"5", APIVersionMinor:"0", OS:"linux", ARCH:"amd64", Ext:"", Checksummers:[]plugingetter.Checksummer{plugingetter.Checksummer{Type:"sha256", Hash:(*sha256.digest)(0xc000526680)}}}}
+2024/01/30 09:23:52 [TRACE] Found the following "github.com/hashicorp/proxmox" installations: [{/home/bertrandt/.config/packer/plugins/github.com/hashicorp/proxmox/packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 v1.1.7}]
+2024/01/30 09:23:52 [INFO] found external [-packer-default-plugin-name- clone iso] builders from name plugin
+2024/01/30 09:23:52 [TRACE] validateValue: not active for proxmox_api_url, so skipping
+2024/01/30 09:23:52 [TRACE] validateValue: not active for proxmox_api_token_id, so skipping
+2024/01/30 09:23:52 [TRACE] validateValue: not active for proxmox_api_token_secret, so skipping
+2024/01/30 09:23:52 [INFO] Starting external plugin /home/bertrandt/.config/packer/plugins/github.com/hashicorp/proxmox/packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 start builder iso
+2024/01/30 09:23:52 Starting plugin: /home/bertrandt/.config/packer/plugins/github.com/hashicorp/proxmox/packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 []string{"/home/bertrandt/.config/packer/plugins/github.com/hashicorp/proxmox/packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64", "start", "builder", "iso"}
+2024/01/30 09:23:52 Waiting for RPC address for: /home/bertrandt/.config/packer/plugins/github.com/hashicorp/proxmox/packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64
+2024/01/30 09:23:52 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: 2024/01/30 09:23:52 Plugin address: unix /tmp/packer-plugin1851905998
+2024/01/30 09:23:52 Received unix RPC address for /home/bertrandt/.config/packer/plugins/github.com/hashicorp/proxmox/packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64: addr is /tmp/packer-plugin1851905998
+2024/01/30 09:23:52 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: 2024/01/30 09:23:52 Waiting for connection...
+2024/01/30 09:23:52 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: 2024/01/30 09:23:52 Serving a plugin connection...
+2024/01/30 09:23:52 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: 2024/01/30 09:23:52 [TRACE] starting builder iso
+2024/01/30 09:23:52 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: 2024/01/30 09:23:52 Number of sockets 0 is too small, using default: 1
+2024/01/30 09:23:52 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: 2024/01/30 09:23:52 CPU type not set, using default 'kvm64'
+2024/01/30 09:23:52 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: 2024/01/30 09:23:52 OS not set, using default 'other'
+2024/01/30 09:23:52 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: 2024/01/30 09:23:52 Disk 0 cache mode not set, using default 'none'
+2024/01/30 09:23:52 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: 2024/01/30 09:23:52 SCSI controller not set, using default 'lsi'
+2024/01/30 09:23:52 ui: Warning: storage_pool_type is deprecated and should be omitted, it will be removed in a later version of the proxmox plugin
+
+  on ubuntu.pkr.hcl line 29:
+  (source code not available)
+
+2024/01/30 09:23:52 ui: Debug mode enabled. Builds will not be parallelized.
+2024/01/30 09:23:52 ui: [1;32mubuntu-server-focal-docker.proxmox-iso.ubuntu-example: output will be in this color.[0m
+2024/01/30 09:23:52 ui: 
+2024/01/30 09:23:52 Build debug mode: true
+2024/01/30 09:23:52 Force build: false
+2024/01/30 09:23:52 On error: 
+2024/01/30 09:23:52 Debug enabled, so waiting for build to finish: ubuntu-server-focal-docker.proxmox-iso.ubuntu-example
+2024/01/30 09:23:52 Starting build run: ubuntu-server-focal-docker.proxmox-iso.ubuntu-example
+2024/01/30 09:23:52 Running builder: 
+2024/01/30 09:23:52 [INFO] (telemetry) Starting builder proxmox-iso.ubuntu-example
+2024/01/30 09:23:52 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: 2024/01/30 09:23:52 using token auth
+2024/01/30 09:23:52 ui: [1;32m==> ubuntu-server-focal-docker.proxmox-iso.ubuntu-example: Retrieving ISO[0m
+2024/01/30 09:23:52 ui: [1;32m==> ubuntu-server-focal-docker.proxmox-iso.ubuntu-example: Trying https://releases.ubuntu.com/22.04.3/ubuntu-22.04.3-live-server-amd64.iso[0m
+2024/01/30 09:23:52 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: 2024/01/30 09:23:52 Acquiring lock for: https://releases.ubuntu.com/22.04.3/ubuntu-22.04.3-live-server-amd64.iso?checksum=sha256%3Aa4acfda10b18da50e2ec50ccaf860d7f20b389df8765611142305c0e911d16fd (/home/bertrandt/.cache/packer/c34a99823b81049d1be9aad8fab0acdfc78304e0.iso.lock)
+2024/01/30 09:23:52 ui: [1;32m==> ubuntu-server-focal-docker.proxmox-iso.ubuntu-example: Trying https://releases.ubuntu.com/22.04.3/ubuntu-22.04.3-live-server-amd64.iso?checksum=sha256%3Aa4acfda10b18da50e2ec50ccaf860d7f20b389df8765611142305c0e911d16fd[0m
+2024/01/30 09:24:02 ui: [1;32m==> ubuntu-server-focal-docker.proxmox-iso.ubuntu-example: https://releases.ubuntu.com/22.04.3/ubuntu-22.04.3-live-server-amd64.iso?checksum=sha256%3Aa4acfda10b18da50e2ec50ccaf860d7f20b389df8765611142305c0e911d16fd => /home/bertrandt/.cache/packer/c34a99823b81049d1be9aad8fab0acdfc78304e0.iso[0m
+2024/01/30 09:24:02 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: 2024/01/30 09:24:02 Leaving retrieve loop for ISO
+2024/01/30 09:24:02 ui: ask: [1;32m==> ubuntu-server-focal-docker.proxmox-iso.ubuntu-example: Pausing after run of step 'StepDownload'. Press enter to continue.[0m
+2024/01/30 09:24:13 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: 2024/01/30 09:24:13 >>>>>>>>>> REQUEST:
+2024/01/30 09:24:13 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: POST /22.04.3/ubuntu-22.04.3-live-server-amd64.iso/nodes/pve/storage/local/upload HTTP/1.1
+2024/01/30 09:24:13 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: Host: releases.ubuntu.com
+2024/01/30 09:24:13 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: User-Agent: Go-http-client/1.1
+2024/01/30 09:24:13 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: Content-Length: 2133391751
+2024/01/30 09:24:13 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: Accept: application/json
+2024/01/30 09:24:13 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: Authorization: PVEAPIToken=packer=<sensitive>
+2024/01/30 09:24:13 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: Content-Type: multipart/form-data; boundary=a2d75fff45e2aa5a902ba06dcc2131c4d9c7da2a6d51a3b4f425c28764e1
+2024/01/30 09:24:13 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: Accept-Encoding: gzip
+2024/01/30 09:24:13 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: 
+2024/01/30 09:24:13 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: <request body of 2133391751 bytes not shown>
+2024/01/30 09:24:13 packer-plugin-proxmox_v1.1.7_x5.0_linux_amd64 plugin: 
